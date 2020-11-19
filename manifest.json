@@ -1,6 +1,6 @@
 {
-  "short_name": "Salisbury",
-  "name": "Bailey Salisbury",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
