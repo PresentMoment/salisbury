@@ -4,9 +4,8 @@ import './App.css';
 let images = [];
 
 for (var i=0; i < 35; i++){
-  images.push(`images/${i}.png`)
+  images.push(`https://presentmoment.github.io/salisbury/images/${i}.png`)
 }
-console.log(images)
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -28,7 +27,6 @@ function shuffle(array) {
 }
 
 shuffle(images);
-console.log(images)
 
 function App() {
   return (
