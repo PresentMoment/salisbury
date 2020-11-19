@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+let images = [];
+
+for (var i=0; i < 35; i++){
+  images.push(`images/${i}.png`)
+}
+console.log(images)
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+shuffle(images);
+console.log(images)
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section id="photos">
+
+      {images.map((source) => (
+        <img src={source} alt={source} key={source} />
+        ))}
+        </section>
     </div>
   );
 }
